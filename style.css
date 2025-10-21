@@ -1,38 +1,64 @@
-html{
-    background-color: chocolate;
+
+html {
+    background-color: #111; 
+    color: #fff; 
 }
-*{
-    border: solid 1px black;
+
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
 }
-main{
-    display:flex;
-    justify-content: center;
+
+
+main {
+    display: flex;
+    flex-direction: column; /* Coloca el título arriba y los botones abajo */
     align-items: center;
-    flex-direction: column;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-.titulo h1{
-font-size: 6rem;
-color: yellow;
- font-family: "Barriecito", system-ui;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    gap: 2rem; /* Espacio entre el título y los botones */
 }
 
-.nav a{
-    color:brown;
-    text-decoration: none;
-    background-color: whitesmoke;
-    padding: 1rem;
-    display: inline-block;
-    margin: 0.5rem
-
-
+/* Título principal */
+.titulo h1 {
+    font-size: 5rem;
+    text-align: center;
+    color: #f5d300; /* Amarillo cálido */
+    font-family: "Barriecito", cursive;
+    text-shadow: 3px 3px 10px rgba(255, 215, 0, 0.4); /* Efecto brillante */
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffb700, #ffd900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Da efecto de degradado en el texto */
 }
 
-.nav ul{
+/* Contenedor del menú */
+.botoncitos ul {
     list-style: none;
-    text-decoration: none;
     display: flex;
     flex-direction: column;
-    padding: 0rem;
+    gap: 1rem; /* Espacio entre botones */
 }
+
+/* Estilo de los botones */
+.botoncitos a {
+    display: block;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.772); /* Sombras suaves */
+}
+
+/* Colores alternos en cada botón */
+.botoncitos li:nth-child(1) a { background-color: #fff178; color: #000000;  font-family: "Quicksand", sans-serif; }  /* Rojo fuerte */
+.botoncitos li:nth-child(2) a { background-color: #fce04d; color: #000000;   font-family: "Quicksand", sans-serif; }   /* Naranja */
+.botoncitos li:nth-child(3) a { background-color: #f5d300; color: #000000;   font-family: "Quicksand", sans-serif; }   /* Verde agua */
+.botoncitos li:nth-child(4) a { background-color: #d4af00; color: #000000;   font-family: "Quicksand", sans-serif; }  /* Azul vivo */
+.botoncitos li:nth-child(5) a { background-color: #bfa600; color: #000000;   font-family: "Quicksand", sans-serif; }  /* Violeta */
+
+
