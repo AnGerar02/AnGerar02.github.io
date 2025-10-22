@@ -42,6 +42,35 @@ main {
     gap: 1rem; /* Espacio entre botones */
 }
 
+
+.botoncitos li:nth-child(1) a:hover {
+  transform: scale(1.1) translateX(5rem);
+  background: linear-gradient(90deg, #2bffcc, #00b894);
+}
+
+
+.botoncitos li:nth-child(2) a:hover {
+  transform: scale(1.1) translateX(-5rem);
+  background: linear-gradient(90deg, #1c7dff, #0047ab);
+}
+
+
+.botoncitos li:nth-child(3) a:hover {
+  transform: scale(1.1) translateX(5rem);
+  background: linear-gradient(90deg, #ff66c4, #ff1cae);
+}
+
+
+.botoncitos li:nth-child(4) a:hover {
+  transform: scale(1.1) translateX(-5rem);
+  background: linear-gradient(90deg, #ffb700, #ff7b00);
+}
+
+
+.botoncitos li:nth-child(5) a:hover {
+  transform: scale(1.1) translateX(5rem);
+  background: linear-gradient(90deg, #2C6E49, #A4C3B2);
+}
 /* Estilo de los botones */
 .botoncitos a {
     display: block;
@@ -52,13 +81,12 @@ main {
     border-radius: 10px; /* Bordes redondeados */
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.772); /* Sombras suaves */
+    transition: all 1s ease-in-out;
 }
 
 /* Colores alternos en cada botón */
-.botoncitos li:nth-child(1) a { background-color: #fff178; color: #000000;  font-family: "Quicksand", sans-serif; }  /* Rojo fuerte */
+.botoncitos li:nth-child(1) a { background-color: #fff178; color: #000000;  font-family: "Quicksand", sans-serif }  /* Rojo fuerte */
 .botoncitos li:nth-child(2) a { background-color: #fce04d; color: #000000;   font-family: "Quicksand", sans-serif; }   /* Naranja */
 .botoncitos li:nth-child(3) a { background-color: #f5d300; color: #000000;   font-family: "Quicksand", sans-serif; }   /* Verde agua */
 .botoncitos li:nth-child(4) a { background-color: #d4af00; color: #000000;   font-family: "Quicksand", sans-serif; }  /* Azul vivo */
 .botoncitos li:nth-child(5) a { background-color: #bfa600; color: #000000;   font-family: "Quicksand", sans-serif; }  /* Violeta */
-
-
