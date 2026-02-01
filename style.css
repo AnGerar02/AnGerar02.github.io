@@ -1,103 +1,121 @@
-html {
-  background-color: #111;
-  color: #fff;
-}
-
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0a; /* Negro profundo */
+  font-family: "Quicksand", sans-serif;
+  overflow: hidden; /* Evita barras de scroll */
+  width: 100vw;
+  height: 100vh;
+}
+
+/* CANVAS: Se mantiene fijo al fondo */
+#canvas1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #000000;
 }
 
 main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  gap: 2rem;
+  gap: 3rem;
+  /* IMPORTANTE: Permite que el mouse atraviese el contenedor para activar las partículas */
+  pointer-events: none;
+}
+
+/* Reactivamos los clicks solo para el título y botones */
+.titulo,
+.botoncitos {
+  pointer-events: auto;
 }
 
 .titulo h1 {
   font-size: 5rem;
   text-align: center;
-  color: #f5d300;
   font-family: "Barriecito", cursive;
-  text-shadow: 3px 3px 10px rgba(255, 215, 0, 0.4);
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #ffb700, #ffd900);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #f5d300,
+    0 0 40px #f5d300;
+  animation: float 3s ease-in-out infinite;
+}
+
+.titulo span {
+  font-size: 2rem;
+  font-family: "Quicksand", sans-serif;
+  color: #ddd;
+  text-shadow: none;
+  display: block;
+  margin-top: 10px;
+  letter-spacing: 3px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .botoncitos ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-.botoncitos li:nth-child(1) a:hover {
-  transform: scale(1.1) translateX(5rem);
-  background: linear-gradient(90deg, #2bffcc, #00b894);
-}
-
-.botoncitos li:nth-child(2) a:hover {
-  transform: scale(1.1) translateX(-5rem);
-  background: linear-gradient(90deg, #1c7dff, #0047ab);
-}
-
-.botoncitos li:nth-child(3) a:hover {
-  transform: scale(1.1) translateX(5rem);
-  background: linear-gradient(90deg, #ff66c4, #ff1cae);
-}
-
-.botoncitos li:nth-child(4) a:hover {
-  transform: scale(1.1) translateX(-5rem);
-  background: linear-gradient(90deg, #ffb700, #ff7b00);
-}
-
-.botoncitos li:nth-child(5) a:hover {
-  transform: scale(1.1) translateX(5rem);
-  background: linear-gradient(90deg, #6e2c2c, #ffffff);
-}
-
+/* BOTONES UNIFORMES Y MODERNOS */
 .botoncitos a {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra el texto perfectamente */
   text-decoration: none;
-  text-align: center;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
+
+  width: 320px; /* Ancho fijo para todos */
+  height: 60px; /* Alto fijo para todos */
+
+  font-size: 1.3rem;
   font-weight: bold;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.772);
-  transition: all 1s ease-in-out;
+  color: #f5d300;
+  border: 2px solid #f5d300;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+  backdrop-filter: blur(5px);
+  transition: 0.3s ease;
 }
 
-.botoncitos li:nth-child(1) a {
-  background-color: #fff178;
-  color: #000000;
-  font-family: "Quicksand", sans-serif;
-} /* Rojo fuerte */
-.botoncitos li:nth-child(2) a {
-  background-color: #fce04d;
-  color: #000000;
-  font-family: "Quicksand", sans-serif;
-} /* Naranja */
-.botoncitos li:nth-child(3) a {
-  background-color: #f5d300;
-  color: #000000;
-  font-family: "Quicksand", sans-serif;
-} /* Verde agua */
-.botoncitos li:nth-child(4) a {
-  background-color: #d4af00;
-  color: #000000;
-  font-family: "Quicksand", sans-serif;
-} /* Azul vivo */
-.botoncitos li:nth-child(5) a {
-  background-color: #bfa600;
-  color: #000000;
-  font-family: "Quicksand", sans-serif;
-} /* Violeta */
+.botoncitos a:hover {
+  background: #f5d300;
+  color: #000;
+  box-shadow: 0 0 25px #f5d300; /* Resplandor al pasar el mouse */
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .titulo h1 {
+    font-size: 3rem;
+  }
+  .botoncitos a {
+    width: 80vw;
+  }
+}
